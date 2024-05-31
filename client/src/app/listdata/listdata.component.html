@@ -1,0 +1,250 @@
+
+<h1 style="margin-top: 40px; margin-bottom: 30px;" *ngIf="isHidden">
+  Management {{title}}
+</h1>
+
+<div class="box-btn">
+  <div class="left-btn" *ngIf="!isHidden" [ngStyle]="">
+
+    <a [routerLink]="['admin']"><button [class.clicked-api]="selectedItem === 0" (click)="selectItem(0, $event)">Categories</button></a>
+    <a [routerLink]="['admin']"><button [class.clicked-api]="selectedItem === 1" (click)="selectItem(1, $event)">Posts</button></a>
+    <a [routerLink]="['admin']"><button [class.clicked-api]="selectedItem === 2" (click)="selectItem(2, $event)">Users</button></a>
+    <a [routerLink]="['admin']"><button [class.clicked-api]="selectedItem === 3" (click)="selectItem(3, $event)">Comments</button></a>
+
+  </div>
+
+  <div class="left-btn" *ngIf="isHidden" [ngStyle]="selectedItem === 3 || this.collection === 3 ? {'column-gap': '0px'} : {}">
+
+    <a [routerLink]="['admin']">
+      <button
+      *ngIf="selectedItem !== 3 || this.collection !== 3 ">
+        Thêm mới
+      </button>
+    </a>
+    <a [routerLink]="['admin']"><button>Xóa</button></a>
+
+  </div>
+
+  <div class="right-btn">
+    <button><i class='bx bxs-left-arrow'></i></button>
+    <button><i class='bx bxs-right-arrow' ></i></button>
+  </div>
+</div>
+
+<div class="data-main">
+
+  <table>
+
+    <thead *ngIf="selectedItem === 0 || this.collection === 0">
+      <tr style="max-width: max-content;" class="band-title">
+        <th colspan="3" style="text-align: left; font-size: 20px;">Parent Categories</th>
+      </tr>
+    </thead>
+
+    <thead *ngIf="selectedItem === 0 || this.collection === 0">
+      <tr class="band-title">
+        <th style="max-width: 80px;"><input type="checkbox" id="select-all" name="select-all"></th>
+        <th>Name</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Slug</th>
+        <th>Index</th>
+        <th>...</th>
+      </tr>
+    </thead>
+
+    <thead *ngIf="selectedItem === 1 || this.collection === 1">
+      <tr class="band-title">
+        <th><input type="checkbox" id="select-all" name="select-all"></th>
+        <th>Title</th>
+        <th>Img</th>
+        <th>Content</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Category</th>
+        <th>Index</th>
+        <th>...</th>
+      </tr>
+    </thead>
+
+    <thead *ngIf="selectedItem === 2 || this.collection === 2">
+      <tr class="band-title">
+        <th><input type="checkbox" id="select-all" name="select-all"></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th>Index</th>
+        <th>...</th>
+      </tr>
+    </thead>
+
+    <thead *ngIf="selectedItem === 3 || this.collection === 3">
+      <tr class="band-title">
+        <th><input type="checkbox" id="select-all" name="select-all"></th>
+        <th>Content</th>
+        <th>Users</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Index</th>
+        <th>...</th>
+      </tr>
+    </thead>
+
+    <!-- ===================== -->
+
+    <tbody class="pastg-react" *ngIf="selectedItem === 0 || this.collection === 0">
+
+      <tr class="band-title phoexn" *ngFor="let category of categories; let i = index" (mouseover)="openModal(i)" (mouseleave)="closeModal(i)">
+        <td><input type="checkbox" id="item1" ></td>
+        <td>{{category.name}}</td>
+        <td>{{category.createdAt}}</td>
+        <td>{{category.updatedAt}}</td>
+        <td>{{category.slug}}</td>
+        <td>{{i+1}}</td>
+        <td class="bax-box">...</td>
+
+        <div class="boxlung-btn" [style.display]="isModalOpen[i] ? 'block' : 'none'">
+          <div (click)="editOrDeleteToService(category)" [routerLink]="['/admin', 'editcategory']" class="bend"><i class='bx bxs-edit-alt'></i> Edit</div>
+          <div (click)="deletecate(null, category._id)" class="bend"><i class='bx bxs-trash-alt' ></i> Remove</div>
+          <input type="hidden" name="categoryId" [value]="category._id"  >
+        </div>
+      </tr>
+
+    </tbody>
+
+    <tbody class="pastg-react" *ngIf="selectedItem === 1 || this.collection === 1">
+
+      <tr class="band-title phoexn" *ngFor="let art of articles; let i = index" (mouseover)="openModal(i)" (mouseleave)="closeModal(i)">
+        <td><input type="checkbox" id="item1" ></td>
+        <td style="max-width: 200px;">{{art.title}}</td>
+        <td style="max-width: 100px; max-height: 100px; overflow: hidden;">
+          <img style="width: 100%; height: 100%; object-fit: contain;"
+          src="{{art.img}}" alt="">
+        </td>
+        <td style="max-width: 200px;">{{art.content}}</td>
+        <td>{{art.createdAt}}</td>
+        <td>{{art.updatedAt}}</td>
+
+        <ng-container *ngFor="let category of categories;">
+          <ng-container *ngFor="let subcategory of category.subcategories;">
+            <ng-container *ngIf="subcategory._id === art.categoryId">
+              <td style="max-width: 200px;">{{subcategory.name}}</td>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+
+        <td>{{i + 1}}</td>
+        <td class="bax-box">...</td>
+
+        <div class="boxlung-btn" [style.display]="isModalOpen[i] ? 'block' : 'none'">
+          <div [routerLink]="['/admin', 'editpots']" class="bend" (click)="editOrDeleteToService(art)"><i class='bx bxs-edit-alt'></i> Edit</div>
+          <div class="bend" (click)="delete(art._id)"><i class='bx bxs-trash-alt' ></i> Remove</div>
+          <input type="hidden" name="artId" [value]="art._id">
+        </div>
+      </tr>
+
+    </tbody>
+
+    <tbody class="pastg-react" *ngIf="selectedItem === 2 || this.collection === 2">
+
+      <tr class="band-title phoexn" *ngFor="let user of users; let i = index" (mouseover)="openModal(i)" (mouseleave)="closeModal(i)">
+        <td><input type="checkbox" id="item1" ></td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.role}}</td>
+        <td>{{i + 1}}</td>
+        <td class="bax-box">...</td>
+
+        <div class="boxlung-btn" [style.display]="isModalOpen[i] ? 'block' : 'none'">
+          <div (click)="editOrDeleteToService(user)" [routerLink]="['/admin', 'edituser']" class="bend"><i class='bx bxs-edit-alt'></i> Edit</div>
+          <div (click)="deleteuser(user._id)" class="bend"><i class='bx bxs-trash-alt' ></i> Remove</div>
+        </div>
+      </tr>
+
+    </tbody>
+
+    <tbody class="pastg-react" *ngIf="selectedItem === 3 || this.collection === 3">
+
+      <tr class="band-title phoexn" *ngFor="let cmt of comments; let i = index" (mouseover)="openModal(i)" (mouseleave)="closeModal(i)">
+        <td><input type="checkbox" id="item1" ></td>
+        <td style="max-width: 200px;">{{cmt.content}}</td>
+        <td>{{cmt.user}}</td>
+        <td>{{cmt.createdAt}}</td>
+        <td>{{cmt.updatedAt}}</td>
+        <td>{{i + 1}}</td>
+        <td class="bax-box">...</td>
+
+        <div class="boxlung-btn" [style.display]="isModalOpen[i] ? 'block' : 'none'">
+
+          <ng-container *ngFor="let art of articles;">
+            <ng-container *ngFor="let cmtatart of art.comments;">
+              <ng-container *ngIf="cmt._id === cmtatart">
+                <div (click)="deletecmt(cmt._id, cmtatart, art._id)" class="bend"><i class='bx bxs-trash-alt' ></i> Remove</div>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+
+        </div>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <br><br>
+
+  <table *ngIf="selectedItem === 0 || this.collection === 0">
+
+    <thead>
+      <tr style="max-width: max-content;" class="band-title">
+        <th colspan="3" style="text-align: left; font-size: 20px;">Children Categories</th>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr class="band-title">
+        <th style="max-width: 80px;"><input type="checkbox" id="select-all" name="select-all"></th>
+        <th>Name</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Slug</th>
+        <th>Parent Category</th>
+        <th>Index</th>
+        <th>...</th>
+      </tr>
+    </thead>
+
+    <!-- ===================== -->
+
+    <tbody class="pastg-react" *ngIf="selectedItem === 0 || this.collection === 0">
+      <ng-container *ngFor="let category of categories; let i = index">
+        <tr class="band-title phoexn" *ngFor="let subcategory of category.subcategories; let j = index"
+            (mouseenter)="onMouseEnter(i, j)" (mouseleave)="onMouseLeave(i, j)">
+          <td><input type="checkbox" id="item1" ></td>
+          <td>{{subcategory.name}}</td>
+          <td>{{subcategory.createdAt}}</td>
+          <td>{{subcategory.updatedAt}}</td>
+          <td>{{subcategory.slug}}</td>
+          <td>{{category.name}}</td>
+          <td>{{ (i * category.subcategories.length) + j + 1 }}</td>
+          <td class="bax-box">...</td>
+
+          <div class="boxlung-btn xian" [style.display]="isHoveringOn(i, j) ? 'block' : 'none'">
+            <div (click)="editOrDeleteCategoryChild(subcategory, category)" [routerLink]="['/admin', 'editcategory']" class="bend">
+              <i class='bx bxs-edit-alt'></i> Edit
+            </div>
+            <div (click)="deletecate(category._id, subcategory._id)" class="bend"><i class='bx bxs-trash-alt' ></i> Remove</div>
+            <input type="hidden" name="categoryId" [value]="subcategory._id">
+            <input type="hidden" name="categoryId" [value]="category._id">
+          </div>
+        </tr>
+      </ng-container>
+    </tbody>
+
+  </table>
+
+  <br><br>
+
+</div>

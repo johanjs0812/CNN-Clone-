@@ -1,0 +1,57 @@
+.form {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+}
+
+.vv {
+  display: flex; align-items: center; column-gap: 20px;
+}
+
+.bb label {
+  margin-bottom: 10px;
+}
+
+.bb input {
+  padding: 15px;
+  border-radius: 10px;
+  outline: none;
+}
+
+button {
+  background-color: var(--main-color);
+  color: white;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(212, 7, 7);
+}
+
+.warning {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

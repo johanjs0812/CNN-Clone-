@@ -1,0 +1,42 @@
+<br><br>
+<h2>{{page}}</h2>
+
+<br><br>
+
+<div class="box-input">
+  <input type="text" [value]="title" placeholder="your title" name="title" (input)="onTitleInputChange($event)" style="width: 100%;">
+</div>
+
+<br><br>
+
+<div class="box-img">
+  <i class='bx bxs-camera' *ngIf="imgHide" (click)="openFilePicker()"></i>
+  <p *ngIf="imgHide">Upload the Featured Image of the post</p>
+  <input type="file" style="display: none;" name="img" #fileInput (change)="onFileSelected($event)">
+  <img *ngIf="!imgHide" [src]="imgSrc" alt="" srcset="">
+  <i (click)="openFilePicker()" *ngIf="!imgHide" class='bx bxs-edit-alt' ></i>
+</div>
+
+<br><br>
+
+<quill-editor [(ngModel)]="content"></quill-editor>
+
+<br><br>
+
+<div class="box-select">
+  <select class="styled-select" (change)="onOptionChange($event)">
+    <option value="" selected>Your category</option>
+    <ng-container *ngFor="let category of categories;">
+      <ng-container *ngFor="let subcategory of category.subcategories;">
+        <option [value]="subcategory._id" [selected]="subcategory._id === categoryId">{{subcategory.name}}</option>
+      </ng-container>
+    </ng-container>
+  </select>
+</div>
+
+<br><br>
+
+<button [routerLink]="['/admin', 'pots']" (click)="edit(postid)" *ngIf="!isHidden" class="typu">Save post</button>
+<button [routerLink]="['/admin', 'pots']" (click)="add()" *ngIf="isHidden" class="typu">Add new pots</button>
+
+<br><br>

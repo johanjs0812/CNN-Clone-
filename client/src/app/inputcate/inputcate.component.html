@@ -1,0 +1,34 @@
+<form class="form">
+  <h2>{{title}}</h2>
+  <br><br>
+  <div class="form-group bb">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="Name category" value="{{categoryName}}" (input)="onNameInputChange($event)">
+    <p class="warning cate-warr"></p>
+  </div>
+  <div class="form-group bb">
+    <label for="slug">Slug:</label>
+    <input type="text" id="slug" name="slug" class="form-control" placeholder="For example: FPT-NODE-JS" value="{{categorySlug}}" (input)="onSlugInputChange($event)">
+    <p class="warning slug-warr"></p>
+  </div>
+  <div class="form-group vv" *ngIf="isHidden">
+    <input type="radio" id="main" name="category" value="main" [(ngModel)]="category" >
+    <label for="main">Đây là danh mục chính</label>
+  </div>
+  <div class="form-group vv" *ngIf="isHidden">
+    <input type="radio" id="dependent" name="category" value="dependent" [(ngModel)]="category" >
+    <label for="dependent">Đây là danh mục phụ thuộc</label>
+  </div>
+  <div class="form-group" [style.display]="category === 'dependent' ? 'block' : 'none'">
+    <select id="selectBox" class="form-control" (change)="onParentInputChange($event)">
+      <option value="" selected>Chưa chọn danh mục chính</option>
+      <option value="{{cate._id}}" *ngFor="let cate of categories">{{cate.name}}</option>
+    </select>
+    <p class="warning op-warr"></p>
+  </div>
+  <br *ngIf="isHidden"><br *ngIf="isHidden">
+  <button [routerLink]="['/admin', 'categories']" (click)="add()" type="submit" *ngIf="isHidden">Add new category</button>
+  <button [routerLink]="['/admin', 'categories']" (click)="editCategory(categoryId)" type="submit" *ngIf="!isHidden && !buttonChild">Save</button>
+  <button [routerLink]="['/admin', 'categories']" (click)="editCategoryChild(categoryId)" type="submit" *ngIf="buttonChild" >Save</button>
+  <input type="hidden" id="id" value="{{categoryId}}">
+</form>

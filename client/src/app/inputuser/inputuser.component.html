@@ -1,0 +1,32 @@
+<form class="form">
+  <h2>{{page}}</h2>
+  <br><br>
+  <div class="form-group bb">
+    <label for="name">Usename:</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="Tên người dùng" [value]="username" (input)="onUsernameInputChange($event)">
+    <p class="warning name-warr"></p>
+  </div>
+  <div class="form-group bb">
+    <label for="pass">Password:</label>
+    <input type="password" id="pass" name="pass" class="form-control" placeholder="Mật khẩu" [value]="password" (input)="onPasswordInputChange($event)">
+    <p class="warning pass-warr"></p>
+  </div>
+  <div class="form-group bb">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="Email" [value]="email" (input)="onEmailInputChange($event)">
+    <p class="warning email-warr"></p>
+  </div>
+
+  <div class="form-group vv">
+    <input type="radio" id="admin" name="role" value="admin" [checked]="role === 'admin'" (change)="onRoleChange($event)">
+    <label for="admin">Admin</label>
+  </div>
+  <div class="form-group vv">
+    <input type="radio" id="user" name="role" value="user" [checked]="role === 'user'" (change)="onRoleChange($event)">
+    <label for="user">User</label>
+  </div>
+
+  <br><br>
+  <button [routerLink]="['/admin', 'users']" (click)="add()" *ngIf="isHidden" type="submit">Add new user</button>
+  <button [routerLink]="['/admin', 'users']" *ngIf="!isHidden" type="submit" (click)="edit(Id)">Save user</button>
+</form>

@@ -1,0 +1,155 @@
+footer {
+  background-color: #000000;
+  padding-top: 48px;
+  border-top: 0.1px solid rgba(255, 255, 255, 0.282);
+  padding-bottom: 24px;
+}
+
+li {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
+
+#container {
+  padding: 0 32px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.search-bar form{
+  display: block;
+  margin-bottom: 24px;
+  position: relative;
+
+}
+
+.search-bar form input {
+  border-radius: 10px;
+  height: 48px;
+  width: 100%;
+  color: #111111;
+  padding: 8px 10px;
+  outline: none;
+  font-size: 18px;
+}
+
+.search-bar form button {
+  position: absolute;
+  height: 32px; top: 17%; right: 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.search-bar form button i {
+  font-size: 20px;
+}
+
+.footer-subnav  {
+  margin-bottom: 24px;
+}
+
+.footer-subnav nav {
+  width: 100%;
+}
+
+.footer-subnav nav ul {
+  display: flex; flex-wrap: wrap; text-align: left; list-style: none;
+}
+
+.footer-subnav nav ul li.x {
+  padding: 0 12px 0 0;
+  width: calc(100% / 7);
+  margin-bottom: 24px;
+}
+
+.footer-subnav nav ul li a {
+  color: white;
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.footer-subnav nav ul li ul{
+  color: white;
+  display: block;
+  margin-top: 12px;
+  text-align: left;
+}
+
+.footer-subnav nav ul li ul li {
+  margin-top: 4px; font-size: 14px; width: 100%;
+}
+
+.footer-driver {
+  background-color: #404040;
+    height: 1px;
+    border: none;
+    margin: 24px auto;
+    width: 100%;
+}
+
+.footer-row {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 32px;
+  display: flex;
+}
+
+.footer-brand {
+  display: flex; align-items: center; color: white; font-weight: 600;
+}
+
+.brand {
+  width: 40px; height: 40px;
+  overflow: hidden;
+}
+
+.brand img {
+  width: 100%; height: 100%;
+}
+
+.footer-social {
+  display: flex; align-items: center; text-align: right;
+  column-gap: 20PX;
+}
+
+.footer-social .tst {
+  display: block;
+  color: white;
+}
+
+.footer-social a, .as {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.footer-social .vs {
+  font-size: 20px; font-weight: 600;
+}
+
+.footer-social i {
+  font-size: 20px;
+}
+
+.footer-social .as{
+  border: 1px solid white;
+   border-radius: 10px; padding: 8px; font-weight: 600; cursor: pointer;
+}
+
+.footer-link {
+  display: flex;
+}
+
+.footer-link a {
+  color: white; display: block;
+  font-size: 13px; margin: 0 16px 4px 0;
+}
+
+.b-text{
+  margin: 24px auto 0; color: white; text-align: left; font-size: 13px;
+}

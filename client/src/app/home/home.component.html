@@ -1,0 +1,527 @@
+<br><br><br>
+<section id="new-news">
+
+  <div class="ctn-newnews">
+
+    <div class="left-news" >
+
+      <div *ngFor="let article of articles.slice(0, 4); let i = index"
+            [ngClass]="i === 0 ? 'leader-new new-mini' : 'top-d'">
+        <a routerLink="/post/{{article._id}}" class="">
+          <div [ngClass]="i === 0 ? 'img-t1' : 'img-td'">
+            <img src="{{article.img}}" alt="">
+          </div>
+          <p [ngClass]="i === 0 ? 'cn-title chicken-s' : 'cn-mini-title chicken-s'">
+            {{article.title}}
+          </p>
+        </a>
+      </div>
+
+      <!-- <div class="top-d">
+        <a href="">
+          <div class="img-td">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2066798400.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-mini-title chicken-s">Do you have insomnia? Let’s get back to sleep
+          </p>
+        </a>
+      </div>
+
+      <div class="top-d">
+        <a href="">
+          <div class="img-td">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2066798400.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-mini-title chicken-s">Do you have insomnia? Let’s get back to sleep
+          </p>
+        </a>
+      </div>
+
+      <div class="top-d">
+        <a href="">
+          <div class="img-td">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2066798400.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-mini-title chicken-s">Do you have insomnia? Let’s get back to sleep
+          </p>
+        </a>
+      </div> -->
+
+    </div>
+
+    <div class="central-news">
+
+      <div *ngFor="let article of articles.slice(8, 11); let i = index"
+          [ngClass]="i === 0 ? 'leader-new new-mini' : 'top-d'">
+        <a routerLink="/post/{{article._id}}" class="">
+          <div [ngClass]="i === 0 ? 'img-t1' : 'img-td'">
+            <img src="{{article.img}}" alt="">
+          </div>
+          <p [ngClass]="i === 0 ? 'cn-title chicken-s' : 'cn-mini-title chicken-s'">
+            {{article.title}}
+          </p>
+        </a>
+      </div>
+
+      <!-- <div class="leader-new new-mini">
+        <a href="" class="">
+          <div class="img-t1">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2074319056.jpg?q=w_2000,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-title chicken-s">
+            Best red carpet looks at the 2024 Oscars
+          </p>
+        </a>
+      </div>
+
+      <div class="top-d">
+        <a href="">
+          <div class="img-td">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2066798400.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-mini-title chicken-s">‘They’re quite like us’: Scientists reveal groundbreaking finding on Stone Age piercings — and who wore them
+          </p>
+        </a>
+      </div>
+
+      <div class="top-d">
+        <a href="">
+          <div class="img-td">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2066798400.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-mini-title chicken-s">Hong Kong plumber’s Olympic breakdancing dream goes down the toilet
+          </p>
+        </a>
+      </div> -->
+
+    </div>
+
+    <div class="right-news">
+
+      <div *ngFor="let article of articles.slice(4, 8); let i = index"
+          [ngClass]="i === 0 ? 'leader-new new-mini' : 'top-d'">
+        <a routerLink="/post/{{article._id}}" class="">
+          <div [ngClass]="i === 0 ? 'img-t1' : 'img-td'">
+            <img src="{{article.img}}" alt="">
+          </div>
+          <p [ngClass]="i === 0 ? 'cn-title chicken-s' : 'cn-mini-title chicken-s'">
+            {{article.title}}
+          </p>
+        </a>
+      </div>
+
+      <!-- <div class="leader-new new-mini">
+        <a href="" class="">
+          <div class="img-t1">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2074319056.jpg?q=w_2000,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-title chicken-s">
+            Best red carpet looks at the 2024 Oscars
+          </p>
+        </a>
+      </div>
+
+      <div class="top-d">
+        <a href="">
+          <div class="img-td">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2066798400.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-mini-title chicken-s">Do you have insomnia? Let’s get back to sleep
+          </p>
+        </a>
+      </div>
+
+      <div class="top-d">
+        <a href="">
+          <div class="img-td">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2066798400.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-mini-title chicken-s">Do you have insomnia? Let’s get back to sleep
+          </p>
+        </a>
+      </div>
+
+      <div class="top-d">
+        <a href="">
+          <div class="img-td">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2066798400.jpg?c=16x9&q=h_653,w_1160,c_fill/f_webp" alt="">
+          </div>
+          <p class="cn-mini-title chicken-s">Do you have insomnia? Let’s get back to sleep
+          </p>
+        </a>
+      </div> -->
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="Featured-sec">
+
+  <div class="contai-sec">
+    <h2>Featured Sections</h2>
+
+    <div class="main-cts-sec">
+
+      <div class="ct-items" *ngFor="let category of categories;">
+
+        <div class="top-nnn">
+          <div class="red-top"></div>
+          <h2>CNN {{category.name}}</h2>
+        </div>
+
+        <ng-container *ngFor="let subcategory of category.subcategories;let i = index; let last = last ">
+          <ng-container *ngIf="subCategoryArticles[subcategory._id] && subCategoryArticles[subcategory._id].length > 0">
+            <div class="cover-ccnns" *ngFor="let article of subCategoryArticles[subcategory._id];">
+              <a routerLink="/post/{{ article._id}}" class="cen-nnn">
+                <div class="img-scc" *ngIf="i === 0">
+                  <img src="{{ article.img }}" alt="">
+                </div>
+                <p [ngClass]="i === 0 ? 'tt-cnn' : 'tt-cnn tt-cnn2'">
+                  {{ article.title }}
+                </p>
+              </a>
+            </div>
+          </ng-container>
+        </ng-container>
+
+
+      </div>
+
+      <!-- <div class="ct-items">
+        <div class="top-nnn">
+          <div class="red-top"></div>
+          <h2>CNN BUSINESS</h2>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <div class="img-scc">
+              <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-516917440.jpg?c=16x9&q=h_438,w_780,c_fill" alt="">
+            </div>
+            <p class="tt-cnn">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="ct-items">
+        <div class="top-nnn">
+          <div class="red-top"></div>
+          <h2>CNN BUSINESS</h2>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <div class="img-scc">
+              <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-516917440.jpg?c=16x9&q=h_438,w_780,c_fill" alt="">
+            </div>
+            <p class="tt-cnn">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="ct-items">
+        <div class="top-nnn">
+          <div class="red-top"></div>
+          <h2>CNN BUSINESS</h2>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <div class="img-scc">
+              <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-516917440.jpg?c=16x9&q=h_438,w_780,c_fill" alt="">
+            </div>
+            <p class="tt-cnn">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="ct-items">
+        <div class="top-nnn">
+          <div class="red-top"></div>
+          <h2>CNN BUSINESS</h2>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <div class="img-scc">
+              <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-516917440.jpg?c=16x9&q=h_438,w_780,c_fill" alt="">
+            </div>
+            <p class="tt-cnn">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="ct-items">
+        <div class="top-nnn">
+          <div class="red-top"></div>
+          <h2>CNN BUSINESS</h2>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <div class="img-scc">
+              <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-516917440.jpg?c=16x9&q=h_438,w_780,c_fill" alt="">
+            </div>
+            <p class="tt-cnn">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+
+        <div class="cover-ccnns">
+          <a class="cen-nnn">
+            <p class="tt-cnn tt-cnn2">
+              US government calls for insurance companies to make advanced payments following cyberattack disruption
+            </p>
+          </a>
+        </div>
+
+      </div> -->
+
+    </div>
+  </div>
+
+</section>
+
+<section id="many-read" >
+  <div class="contai-sec">
+    <h2>Most read news</h2>
+
+    <div class="ctn-most-read">
+
+      <div class="left-ctn-most">
+        <a class="a-bs" href="">
+          <div class="img-most-big">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/2024-03-08t035511z-242013289-rc2na6a0zpkk-rtrmadp-3-australia-wine.JPG?c=16x9&q=h_438,w_780,c_fill" alt="">
+          </div>
+          <p class="title-big">
+            Australian farmers rip out millions of vines amid wine glut
+          </p>
+        </a>
+      </div>
+
+      <div class="right-ctn-most">
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+        <div class="itm-ctn-most">
+          <a>Mystery of common mushroom growing from an amphibian shows how little we know about fungi</a>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+<section class="total-data">
+
+  <div class="item-total">
+    <div class="icon-i-tt">
+      <i class='bx bx-collection' ></i>
+    </div>
+    <div class="stats-tt">
+      <p class="st-qtt">{{categories.length}}</p>
+      <p class="name-pp">Category</p>
+    </div>
+  </div>
+
+  <div class="item-total">
+    <div class="icon-i-tt">
+      <i class='bx bx-receipt'></i>
+    </div>
+    <div class="stats-tt">
+      <p class="st-qtt">{{articles.length}}</p>
+      <p class="name-pp">Posts</p>
+    </div>
+  </div>
+
+  <div class="item-total">
+    <div class="icon-i-tt">
+      <i class='bx bxs-user-rectangle'></i>
+    </div>
+    <div class="stats-tt">
+      <p class="st-qtt">{{users.length}}</p>
+      <p class="name-pp">Users</p>
+    </div>
+  </div>
+
+  <div class="item-total">
+    <div class="icon-i-tt">
+      <i class='bx bx-comment-detail'></i>
+    </div>
+    <div class="stats-tt">
+      <p class="st-qtt">{{comments.length}}</p>
+      <p class="name-pp">Comments</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- <section class=chart-section>
+
+  <div class="chart-it-p">
+    <ngx-charts-pie-chart
+    [results]="dataPieChart"
+    [customColors]="customColors"
+    [legend]="false"
+    [labels]="true">
+  </ngx-charts-pie-chart>
+  </div>
+
+  <div class="chart-it-p">
+    <ngx-charts-bar-vertical
+      [results]="dataBarChart"
+      [customColors]="customColors"
+      [gradient]="false"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="false"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true">
+    </ngx-charts-bar-vertical>
+  </div>
+
+  <div class="chart-it-p">
+    <ngx-charts-line-chart
+      [results]="dataLineChart"
+      [customColors]="customColors"
+      [legend]="false"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true">
+    </ngx-charts-line-chart>
+  </div>
+
+</section> -->
+
+<section class="data-post">
+
+  <app-listdata></app-listdata>
+
+</section>

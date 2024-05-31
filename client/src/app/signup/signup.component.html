@@ -1,0 +1,59 @@
+<section>
+  <div class="container">
+
+    <div class="central-s">
+      <div class="logo">
+        <img src="https://i.pinimg.com/564x/c7/96/f1/c796f1c2e7470ed1b075be31d7c5f90b.jpg" alt="">
+      </div>
+
+      <h1>
+        Sign up for a CNN account
+      </h1>
+
+      <div class="pxx">
+        Already have an account? <a class="redicpage" routerLink="/login">Sign in.</a>
+      </div>
+
+      <form action="">
+
+        <div class="cump-inp">
+          <input type="text" placeholder="Usename" (input)="onUsernameInputChange($event)" [value]="username">
+          <span class="err">{{err1}}</span>
+        </div>
+
+        <div class="cump-inp">
+          <input type="text" placeholder="Email address" (input)="onEmailInputChange($event)" [value]="email">
+          <span class="err">{{err2}}</span>
+        </div>
+
+        <div class="cump-inp">
+          <input type="password" placeholder="Password" (input)="onPasswordInputChange($event)" [value]="password">
+          <span class="err"></span>
+        </div>
+
+        <div class="checkbox-container" style="margin-bottom: 24px;">
+          <input type="checkbox" id="promo" name="promo" >
+          <p class="xyn">
+            Use my email address to send marketing promotions and offers from CNN and WBD affiliates via email, social media, and other channels.
+          </p>
+        </div>
+
+        <!-- <a class="forget" href="">Forgot password?</a> -->
+
+        <p class="xyn" style="margin: 0; margin-bottom: 10px;">
+          By signing up for an account you agree to the CNN Terms of Use and Privacy Policy.
+        </p>
+
+        <button (click)="add($event)" class="submit" type="submit">Sign up</button>
+
+        <p class="xyn" style="margin: 0;">
+          To withdraw your consent and learn more about your rights and how to exercise them, see the Privacy Policy.
+
+          To opt-out at any time, see options available here.
+        </p>
+      </form>
+    </div>
+
+  </div>
+
+</section>

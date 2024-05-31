@@ -1,0 +1,68 @@
+<div  style="padding: 32px;">
+
+  <div class="red-left">
+   <h3 style="margin-left: 10px;">Comments ({{comments.length}})</h3>
+  </div>
+
+  <br>
+  <div class="btn-load-more" style="border: none;" *ngIf="currentUser == null">
+    <button class="button-load-more-cmt" routerLink="/login">Log in to comment</button>
+  </div>
+  <br>
+
+  <div class="display-flex width100" *ngIf="currentUser !== null">
+    <div class="logo-cmter">
+      <p>{{ (currentUser.username.charAt(0) | uppercase) }}</p>
+    </div>
+
+    <div class="ben-inpout">
+
+      <textarea name="" id=""  placeholder="Your comment" (input)="onContentInputChange($event)" [value]="content"></textarea>
+
+      <div class="display-flex justify-content-space-beetween align-items-center">
+        <p>Maximum: <span style="font-weight: bold;">1500 characters</span></p>
+        <button (click)="add()" class="send-cmt">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bot-back" *ngIf="comments.length > 0">
+    <button class="red-bot padd">Lastest</button>
+    <button class="padd">Oldest</button>
+  </div>
+
+  <div class="contai-data">
+
+    <div class="user-comment-data" *ngFor="let comment of comments; let i = index;">
+      <ng-container *ngFor="let user of users">
+        <ng-container *ngIf="comment.user === user._id" >
+          <div class="logo-cmter">
+            <p> {{ (user.username.charAt(0) | uppercase) }}</p>
+          </div>
+          <div style="margin-left: 5px;" class="tex-op-op">
+            <p style="font-weight: bold; margin-bottom: 8px;">{{user.username}}</p>
+            <p style="margin-bottom: 8px;" *ngIf="!(i === editingIndex)" > {{comment.content}}</p>
+
+            <div class="yangchidan" *ngIf="i === editingIndex" [class]="'input-edit-' + i" >
+              <input type="text" placeholder="Your comment" [value]="contentEdit" (input)="onContenEdit($event )">
+            </div>
+
+            <div class="display-flex align-items-center ">
+              <a class="display-block opt-cmt" (click)="deletecmt(comment._id)" *ngIf="!(i === editingIndex) && comment.user === currentUser?._id">Remove</a>
+              <a class="display-block opt-cmt" (click)="openEdit(i, comment.content)" *ngIf="!(i === editingIndex) && comment.user === currentUser?._id">Edit</a>
+              <a class="display-block opt-cmt" *ngIf="i === editingIndex" (click)="closeEdit()">Cancel</a>
+              <a class="display-block opt-cmt" *ngIf="i === editingIndex" (click)="edit(comment._id)" (click)="closeEdit()">Save</a>
+              <!-- <a class="display-block opt-cmt" *ngIf="currentUser !== null">Reply</a> -->
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+
+  </div>
+
+  <div class="btn-load-more" *ngIf="comments.length >= 5">
+    <button class="button-load-more-cmt vlbtn"  >Load more</button>
+  </div>
+  <br><br><br>
+</div>

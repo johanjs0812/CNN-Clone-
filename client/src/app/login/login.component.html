@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+
+    <div class="central-s">
+      <div class="logo">
+        <img src="https://i.pinimg.com/564x/c7/96/f1/c796f1c2e7470ed1b075be31d7c5f90b.jpg" alt="">
+      </div>
+
+      <h1>
+        Sign in to your CNN account
+      </h1>
+
+      <div class="pxx">
+        Don't have an account? <a class="redicpage" routerLink="/signup">Sign up</a>
+      </div>
+
+      <form action="">
+
+        <div class="cump-inp">
+          <input type="text" placeholder="Email address" (input)="onEmailInputChange($event)" [value]="email">
+          <span class="err">{{err1}}</span>
+        </div>
+
+        <div class="cump-inp">
+          <input type="password" placeholder="Password" (input)="onPasswordInputChange($event)" [value]="password">
+          <span class="err">{{err2}}</span>
+        </div>
+
+        <a class="forget" href="">Forgot password?</a>
+
+        <button (click)="login($event)" class="submit" type="submit">Sign in</button>
+
+      </form>
+    </div>
+
+  </div>
+
+</section>

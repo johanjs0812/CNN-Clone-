@@ -1,0 +1,25 @@
+<header>
+  <div id="container">
+    <div id="left-menu">
+      <i class="fas fa-bars"></i>
+      <a routerLink="/home" style="padding: 0;">
+        <div id="logo">
+          <img src="https://i.pinimg.com/564x/d8/2d/16/d82d1625ab26c4e8534d1f059415398e.jpg" alt="">
+        </div>
+      </a>
+
+      <a *ngFor="let category of categories" routerLink="/listnews/{{category._id}}">{{category.name}}</a>
+
+    </div>
+
+    <div id="right-menu">
+        <i class="fas fa-search"></i>
+        <p class="username-pi" *ngIf="currentUser !== null" (click)="clearUser()">Log out</p>
+        <div class="avatar_user_hd" *ngIf="currentUser !== null">
+          {{ (currentUser.username.charAt(0) | uppercase) }}
+        </div>
+        <a *ngIf="currentUser == null" [routerLink]="['login']">Log in</a>
+      </div>
+  </div>
+
+</header>

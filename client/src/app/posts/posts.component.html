@@ -1,0 +1,80 @@
+<br><br><br><br>
+<section class="posts-page">
+
+  <div class="bom-t-p">
+    <div class="true-a">
+      <a href="">World</a> <span> / </span> <a href="">Europe</a>
+    </div>
+
+    <h1 style="padding-right: 50px;">
+      {{article.title}}
+    </h1>
+
+    <div class="inf-time">
+      <div class="avt-id">
+        <img src="https://i.pinimg.com/736x/d8/2d/16/d82d1625ab26c4e8534d1f059415398e.jpg" alt="">
+      </div>
+
+      <div class="by-tim">
+        <div class="by-au">
+          By CNN
+        </div>
+        <div class="dis-lox"><p class="time-read">4 minute read</p><div class="bi-gap"></div><p class="time-up">Updated 12:26 PM EDT, Wed March 13, 2024</p></div>
+      </div>
+    </div>
+    <br>
+    <div class="ben-u">
+      <i class="fab fa-youtube tst" ></i>
+      <i class="fab fa-facebook-f tst"></i>
+      <i class="fab fa-tiktok tst"></i>
+      <i class="fab fa-instagram tst"></i>
+      <i class="fab fa-linkedin-in tst"></i>
+    </div>
+  </div>
+
+  <div class="contain-double">
+    <div class="bom-t-p">
+      <div class="content">
+
+        <div class="img-ctt">
+          <img src="{{article.img}}" alt="">
+        </div>
+
+        <div class="tamthoi">
+          <p class="tamkhung" [innerHTML]="article.content">
+            <!-- (CNN) — Ukraine has launched drone attacks on at least three oil refineries deep inside Russia, as Kyiv intensifies its cross-border strikes days before President Vladimir Putin’s anticipated re-election.
+            <br><br>
+            A Ukrainian defense source told CNN on Wednesday that Ukraine is “implementing a well-planned strategy to decrease Russian economic potential.”
+            <br><br>
+            It struck three Russian oil refineries targeted in the cities of Ryazan, about 130 miles southeast of Moscow; Kstovo, in the Nizhny Novgorod region, nearly 300 miles east of the capital; and Kirishi in Russia’s northwest. The trio of facilities are among Russia’s largest refineries, the source said.
+            <br><br>
+            A fourth facility – the Novoshakhtinsky oil refinery in Rostov-on-Don – was also hit, a representative of the Defense Intelligence of Ukraine said Wednesday.
+            <br><br>
+            It marked the second consecutive day of Ukrainian attacks on Russian energy sites, and the locations targeted represent a spate of attacks well within Russia’s territory.
+            <br><br>
+            “Our goal is to take away our enemy’s resources and decrease the flow of oil money and fuel Russia is using directly on the war,” the source told CNN.
+            <br><br>
+            They came after a chaotic day on the Russian side of the Ukrainian border, during which pro-Ukrainian groups of Russian fighters said they launched cross-border attacks and claimed to have gained control of the village of Tyotkino in Russia’s Kursk region.
+            <br><br>
+            The village remained under fire “all day” on Wednesday, the regional governor said.
+            <br><br> -->
+
+
+          </p>
+        </div>
+
+      </div>
+
+      <div class="comment-cpn">
+        <app-comment [dataFromParent]="article._id"></app-comment>
+      </div>
+    </div>
+
+    <div class="for-rightbar">
+      <app-rightbar></app-rightbar>
+    </div>
+  </div>
+
+</section>
+
+

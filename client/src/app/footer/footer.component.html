@@ -1,0 +1,86 @@
+<footer>
+
+  <div id="container">
+
+    <div class="search-bar">
+      <form >
+        <input type="text" placeholder="Search CNN...">
+        <button>
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+    <hr>
+    <div class="footer-subnav">
+      <nav>
+        <ul>
+
+          <li *ngFor="let category of categories" class="x">
+            <a href="">{{category.name}}</a>
+            <ul>
+              <li *ngFor="let subcategory of category.subcategories"> {{ subcategory.name }}</li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+
+    <hr class="footer-driver">
+
+    <div class="footer-row">
+
+      <div class="footer-brand">
+        <div class="brand">
+          <img src="https://i.pinimg.com/736x/d8/2d/16/d82d1625ab26c4e8534d1f059415398e.jpg" alt="">
+        </div>
+        <div style="margin-left: 16px;">
+          US
+        </div>
+      </div>
+
+      <div class="footer-social">
+
+        <a class="tst">Watch</a>
+        <a class="tst">Listen</a>
+        <a class="tst">Live TV</a>
+
+        <div class="tst vs">
+          |
+        </div>
+
+        <div class="tst">FOLLOW CNN</div>
+        <i class="fab fa-youtube tst" ></i>
+        <i class="fab fa-facebook-f tst"></i>
+        <i class="fab fa-tiktok tst"></i>
+        <i class="fab fa-instagram tst"></i>
+        <i class="fab fa-linkedin-in tst"></i>
+        <div class="tst as">
+          Log in
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="footer-driver">
+
+    <nav class="footer-link">
+      <a href="">Terms of Use</a>
+      <a href="">Privacy Policy</a>
+      <a href="">Cookie Settings</a>
+      <a href="">Ad Choices</a>
+      <a href="">Accessibility & CC</a>
+      <a href="">About</a>
+      <a href="">Newsletters</a>
+      <a href="">Transcripts</a>
+    </nav>
+
+    <p class="b-text">
+      © 2024 Cable News Network. A Warner Bros. Discovery Company. All Rights Reserved.
+      <br>
+      CNN Sans ™ & © 2016 Cable News Network.
+    </p>
+  </div>
+
+</footer>

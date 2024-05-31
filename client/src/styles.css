@@ -1,0 +1,48 @@
+:root{
+  --main-color:red;
+  --avt-user: rgb(232, 46, 61);
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* NGX-QUILL */
+
+
+.ql-container {
+  background-color: #ffffff;
+  min-height: 300px;
+  width: 100%;
+}
+
+.ql-editor {
+  color: #333;
+}
+
+.ql-toolbar {
+  background-color: #fff;
+}
+
+/* .ql-container {
+  border-radius: 10px;
+} */
+

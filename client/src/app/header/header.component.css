@@ -1,0 +1,86 @@
+header {
+  background-color: #111111;
+  padding: 0 32px;
+  font-weight: 500;
+  position: fixed;
+  z-index: 10; border-bottom: solid 0.1px rgba(255, 255, 255, 0.329); width: 100%;
+}
+
+header a {
+  font-size: 15px;
+}
+
+#container{
+  justify-content: space-between;
+  display: flex;
+  padding: 0 32px;
+}
+
+#left-menu {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  height: 40px;
+}
+
+#left-menu i {
+  color: white;
+  font-size: 21px;
+  padding: 0 12px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+#left-menu a{
+  color: white;
+  display: block;
+  padding: 0 12px;
+}
+
+#logo {
+  width: 40px; height: 40px; overflow: hidden;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+#logo img{
+  width: 100%; height: 100%;
+}
+
+#right-menu {
+  display: flex;
+  align-items: center;
+}
+
+#right-menu i {
+  color: white;
+  padding: 0 32px;
+}
+
+#right-menu a {
+  color: white;
+  padding: 6px 10px;
+  display: block;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#right-menu .avatar_user_hd {
+  color: white;
+  padding: 6px 10px;
+  display: block;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: var(--avt-user);
+  font-weight: bold;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#right-menu .username-pi{
+  color: white;
+  font-size: 14px;
+  display: flex; align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
